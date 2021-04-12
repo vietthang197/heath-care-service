@@ -19,6 +19,10 @@ public class Payment {
 
     private String status;
 
+    private int appointmentNo;
+
+    private String doctorName;
+
     public String getPatient() {
         return this.patient;
     }
@@ -65,5 +69,21 @@ public class Payment {
 
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    public int getAppointmentNo() {
+        return appointmentNo;
+    }
+
+    public void setAppointmentNo(int appointmentNo) {
+        this.appointmentNo = appointmentNo;
+    }
+
+    public String getDoctorName() {
+        return doctorName;
+    }
+
+    public void setDoctorName(String doctorName) {
+        this.doctorName = doctorName;
     }
 }

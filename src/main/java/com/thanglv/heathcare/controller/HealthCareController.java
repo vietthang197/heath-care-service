@@ -33,6 +33,8 @@ public class HealthCareController {
         if (paymentSettlement.getAppointmentNumber() >= 0) {
             Payment payment = HealthCareUtil.createNewPaymentEntry(paymentSettlement);
             payment.setStatus("Settled");
+            payment.setAppointmentNo(paymentSettlement.getAppointmentNumber());
+            payment.setDoctorName(paymentSettlement.getDoctor().getName());
             HealthcareDao.payments.put(payment.getPaymentID(), payment);
             return ResponseEntity.status(HttpStatus.OK).body(payment);
         }
